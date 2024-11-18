@@ -3,7 +3,7 @@ function toggleDivision(id) {
     const header = divisionContent.previousElementSibling;
     const chevron = header.querySelector('.fa-chevron-down');
     
-    // Close all other divisions
+
     document.querySelectorAll('.division-content').forEach(content => {
         if (content.id !== id && content.classList.contains('active')) {
             content.classList.remove('active');
