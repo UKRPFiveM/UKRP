@@ -1,45 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UKRP Changelog - Christmas Edition</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UKRP - United Kingdom Roleplay</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-
-  <canvas id="snow-canvas"></canvas>
-
-  <header>
-    <div class="header-content">
-      <h1>🎄UKRP🎅</h1>
-      <p>Celebrate the festive season with our latest updates!</p>
-      <a href="https://discord.gg/nuaarHxRwm" class="join-server">🎁 Join Our Server 🎁</a>
-    </div>
-  </header>
-
-  <main>
-    <section id="changelog">
-      <div class="container">
-        <h2>🎁 Latest Changelog 🎁</h2>
-        <div id="changelog-content">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="rules.html">Rules</a>
+                <a href="divisions.html">Divisions</a>
+                <a href="staff.html">Staff Team</a>
+                <a href="command.html">Command</a>
+                <a href="donations.html">Donations</a>
+            </div>
+            <div class="nav-buttons">
+                <a href="https://cfx.re/join/k9gg57" class="connect-btn">Connect to Server</a>
+                <a href="https://discord.gg/ukrp24" class="discord-btn">
+                    <i class="fab fa-discord"></i> Join Discord
+                </a>
+            </div>
         </div>
-      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="logo-container">
+                <img src="images/UKRP.png" alt="UKRP Logo" class="server-logo">
+            </div>
+            <h1>UKRP</h1>
+            <p>United Kingdom Roleplay</p>
+            <div class="server-status">
+                <span class="status-dot"></span>
+                <span class="status-text">Checking server status...</span>
+            </div>
+        </div>
     </section>
-  </main>
 
-  <button id="back-to-top" title="Back to Top">⬆</button>
+    <!-- Main Content -->
+    <section class="main-content">
+        <div class="container">
+            <div class="info-box">
+                <h2><i class="fas fa-star"></i> Featured Divisions</h2>
+                <div class="division-list">
+                    <div class="division-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Metropolitan Police</span>
+                    </div>
+                    <div class="division-item">
+                        <i class="fas fa-hospital"></i>
+                        <span>NHS</span>
+                    </div>
+                    <div class="division-item">
+                        <i class="fas fa-fire"></i>
+                        <span>Civilian</span>
+                    </div>
+                </div>
+            </div>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2024 United Kingdom RP. All rights reserved. | <a href="#">Join the Server</a></p>
-      <p>Made with ❤️ and Christmas cheer!</p>
-    </div>
-  </footer>
+            <div class="info-box">
+                <h2><i class="fas fa-info-circle"></i> Server Information</h2>
+                <div class="server-info">
+                    <div class="info-item">
+                        <i class="fas fa-server"></i>
+                        <span>F8 Connect: connect k9gg57</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-users"></i>
+                        <span>Active Community</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-headset"></i>
+                        <span>24/7 Staff Support</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Quick Join -->
+    <section class="quick-join">
+        <div class="container">
+            <h2>Ready to Join?</h2>
+            <div class="join-buttons">
+                <a href="#" class="connect-btn large">Connect to Server</a>
+                <a href="https://discord.gg/yourserver" class="discord-btn large">Join Discord</a>
+            </div>
+        </div>
+    </section>
 
-  <script src="snowflakes.js"></script>
-  <script src="script.js"></script>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 UKRP. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="rules.html">Rules</a>
+                    <a href="divisions.html">Divisions</a>
+                    <a href="staff.html">Staff Team</a>
+                    <a href="command.html">Command</a>
+                    <a href="donations.html">Donations</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/server-status.js"></script>
 </body>
-</html>
+</html> 

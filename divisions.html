@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divisions - UKRP</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="rules.html">Rules</a>
+                <a href="divisions.html" class="active">Divisions</a>
+                <a href="staff.html">Staff Team</a>
+                <a href="command.html">Command</a>
+                <a href="donations.html">Donations</a>
+            </div>
+            <div class="nav-buttons">
+                <a href="https://cfx.re/join/k9gg57" class="connect-btn">Connect to Server</a>
+                <a href="https://discord.gg/ukrp24" class="discord-btn">
+                    <i class="fab fa-discord"></i> Join Discord
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- Divisions Content -->
+    <section class="divisions-section">
+        <div class="container">
+            <h1 class="page-title">Divisions</h1>
+            
+            <div class="divisions-container">
+                <!-- MPS Division -->
+                <div class="division-category">
+                    <div class="category-header" onclick="toggleDivision('mps-division')">
+                        <h2><i class="fas fa-shield-alt"></i> Metropolitan Police Service</h2>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="division-content" id="mps-division">
+                        <!-- MO8 -->
+                        <div class="sub-division">
+                            <h3><i class="fas fa-car"></i> MO8 (RTPC)</h3>
+                            <p>Roads and Transport Policing Command specializes in traffic enforcement and road safety.</p>
+                            <div class="division-info">
+                                <span><i class="fas fa-star"></i> Become a TPAC Trained Officer!</span>
+                            </div>
+                        </div>
+
+                        <!-- ERPT -->
+                        <div class="sub-division">
+                            <h3><i class="fas fa-users"></i> ERPT</h3>
+                            <p>Emergency Response Policing Team handles immediate response to emergency calls.</p>
+                            <div class="division-info">
+                                <span><i class="fas fa-clock"></i> Resolve Crime Around London!</span>
+                            </div>
+                        </div>
+
+                        <!-- DSU -->
+                        <div class="sub-division">
+                            <h3><i class="fas fa-fist-raised"></i> DSU (MO7)</h3>
+                            <p>Dedicated Support Unit provides tactical support and public order policing.</p>
+                            <div class="division-info">
+                                <span><i class="fas fa-shield-alt"></i> Assist other Police with their duties!</span>
+                            </div>
+                        </div>
+
+                        <!-- MO19 -->
+                        <div class="sub-division">
+                            <h3><i class="fas fa-crosshairs"></i> MO19 (AFO)</h3>
+                            <p>Authorized Firearms Unit - Coming Soon</p>
+                            <div class="division-info">
+                                <span><i class="fas fa-lock"></i> Applications Opening Soon</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LAS Division -->
+                <div class="division-category">
+                    <div class="category-header" onclick="toggleDivision('las-division')">
+                        <h2><i class="fas fa-ambulance"></i> London Ambulance Service</h2>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="division-content" id="las-division">
+                        <div class="sub-division">
+                            <h3><i class="fas fa-heartbeat"></i> LAS</h3>
+                            <p>Opening Soon - Emergency Medical Response Service</p>
+                            <div class="division-info">
+                                <span><i class="fas fa-clock"></i> Coming Soon</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 UKRP. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="rules.html">Rules</a>
+                    <a href="divisions.html">Divisions</a>
+                    <a href="staff.html">Staff Team</a>
+                    <a href="command.html">Command</a>
+                    <a href="donations.html">Donations</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/divisions.js"></script>
+</body>
+</html> 
