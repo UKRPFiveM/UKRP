@@ -29,7 +29,9 @@ body {
 }
 
 .navbar {
-    background: var(--surface);
+    background: rgba(20, 20, 20, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
     padding: 1rem 0;
     position: fixed;
     width: 100%;
@@ -54,6 +56,24 @@ body {
     margin: 0 0.5rem;
     border-radius: 4px;
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-links a:hover::after {
+    width: 80%;
 }
 
 .nav-links a:hover {
@@ -81,19 +101,18 @@ body {
     gap: 0.5rem;
     position: relative;
     overflow: hidden;
-    border: 2px solid transparent;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .connect-btn {
     background: linear-gradient(45deg, var(--accent), #357abd);
     color: var(--text);
-    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.2);
 }
 
 .discord-btn {
     background: linear-gradient(45deg, #7289da, #5b6eae);
     color: var(--text);
-    box-shadow: 0 4px 15px rgba(114, 137, 218, 0.2);
 }
 
 .connect-btn:hover, .discord-btn:hover {
@@ -104,14 +123,6 @@ body {
 .connect-btn:active, .discord-btn:active {
     transform: translateY(0);
 }
-
-
-.connect-btn.large, .discord-btn.large {
-    padding: 1rem 2.5rem;
-    font-size: 1.1rem;
-    letter-spacing: 0.5px;
-}
-
 
 .connect-btn::before, .discord-btn::before {
     content: '';
@@ -133,23 +144,11 @@ body {
     left: 100%;
 }
 
-
-@media (max-width: 768px) {
-    .nav-buttons {
-        gap: 0.5rem;
-    }
-
-    .connect-btn, .discord-btn {
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
-    }
-
-    .connect-btn.large, .discord-btn.large {
-        padding: 0.8rem 1.8rem;
-        font-size: 1rem;
-    }
+.connect-btn.large, .discord-btn.large {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
 }
-
 
 .hero {
     height: 80vh;
@@ -188,7 +187,6 @@ body {
     background: #4CAF50;
     border-radius: 50%;
 }
-
 
 .main-content {
     padding: 4rem 0;
@@ -230,7 +228,6 @@ body {
     background: rgba(255, 255, 255, 0.1);
 }
 
-
 .quick-join {
     background: var(--surface);
     padding: 4rem 0;
@@ -248,7 +245,6 @@ body {
     padding: 1rem 2rem;
     font-size: 1.1rem;
 }
-
 
 footer {
     background: var(--surface);
@@ -276,7 +272,6 @@ footer {
 .footer-links a:hover {
     color: var(--accent);
 }
-
 
 @media (max-width: 768px) {
     .nav-container {
@@ -306,7 +301,6 @@ footer {
     }
 }
 
-
 .rules-section {
     padding: 120px 0 4rem;
 }
@@ -316,6 +310,19 @@ footer {
     font-size: 2.5rem;
     margin-bottom: 2rem;
     text-align: center;
+    text-shadow: 0 2px 10px rgba(74, 144, 226, 0.3);
+    position: relative;
+}
+
+.page-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
 }
 
 .rules-container {
@@ -441,7 +448,6 @@ footer {
     }
 }
 
-
 .rule-category {
     transition: all 0.3s ease;
 }
@@ -479,7 +485,6 @@ footer {
 .rule-item:first-child {
     margin-top: 0.5rem;
 }
-
 
 .divisions-section {
     padding: 120px 0 4rem;
@@ -559,7 +564,6 @@ footer {
     border-radius: 4px;
 }
 
-
 .staff-section {
     padding: 120px 0 4rem;
 }
@@ -588,18 +592,19 @@ footer {
 }
 
 .staff-card {
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 10px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     padding: 2rem;
     text-align: center;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
 }
 
 .staff-card:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-color: var(--accent);
 }
 
 .staff-avatar {
@@ -611,17 +616,50 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    transition: all 0.3s ease;
 }
 
-.staff-avatar i {
-    font-size: 2rem;
-    color: var(--surface);
+.staff-avatar::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, var(--accent), transparent);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+.staff-card:hover .staff-avatar::after {
+    opacity: 0.5;
 }
 
 .staff-info h3 {
     color: var(--text);
     font-size: 1.4rem;
     margin-bottom: 0.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.staff-info h3::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.staff-card:hover .staff-info h3::after {
+    transform: scaleX(1);
 }
 
 .staff-role {
@@ -631,7 +669,6 @@ footer {
     letter-spacing: 1px;
 }
 
-
 .staff-card.founder .staff-avatar {
     background: linear-gradient(45deg, #ffd700, #ff9900);
 }
@@ -639,7 +676,6 @@ footer {
 .staff-card.events .staff-avatar {
     background: linear-gradient(45deg, #4a90e2, #357abd);
 }
-
 
 @media (max-width: 768px) {
     .staff-grid {
@@ -651,7 +687,6 @@ footer {
         padding: 1.5rem;
     }
 }
-
 
 .command-section {
     padding: 120px 0 4rem;
@@ -716,7 +751,6 @@ footer {
     display: block;
 }
 
-
 .command-category.gold h2 {
     color: #ffd700;
 }
@@ -741,7 +775,6 @@ footer {
     color: #cd7f32;
 }
 
-
 .command-card:hover {
     background: rgba(255, 255, 255, 0.05);
 }
@@ -758,7 +791,6 @@ footer {
     border-color: rgba(205, 127, 50, 0.3);
 }
 
-
 @media (max-width: 768px) {
     .command-grid {
         grid-template-columns: 1fr;
@@ -769,7 +801,6 @@ footer {
         padding: 1.5rem;
     }
 }
-
 
 .logo-container {
     margin-bottom: -2rem;
@@ -798,7 +829,6 @@ footer {
     }
 }
 
-
 @media (max-width: 1200px) {
     .container {
         max-width: 960px;
@@ -825,7 +855,6 @@ footer {
         padding: 0 1rem;
     }
 
-   
     .nav-container {
         flex-direction: column;
         gap: 1rem;
@@ -849,7 +878,6 @@ footer {
         justify-content: center;
     }
 
- 
     .hero {
         margin-top: 120px;
         padding: 2rem 0;
@@ -880,7 +908,6 @@ footer {
         padding: 0.8rem 1rem;
     }
 
-
     .division-category {
         padding: 1rem;
     }
@@ -889,7 +916,6 @@ footer {
         padding: 1rem;
     }
 
-    
     .command-grid {
         grid-template-columns: 1fr;
     }
@@ -900,7 +926,6 @@ footer {
 }
 
 @media (max-width: 576px) {
-
     .hero-content h1 {
         font-size: 2.5rem;
     }
@@ -924,7 +949,6 @@ footer {
         justify-content: center;
     }
 
- 
     .footer-content {
         flex-direction: column;
         text-align: center;
@@ -937,7 +961,6 @@ footer {
         gap: 1rem;
     }
 
- 
     .rule-number {
         min-width: 35px;
         font-size: 0.9rem;
@@ -951,7 +974,6 @@ footer {
         font-size: 0.8rem;
     }
 }
-
 
 @media (min-width: 1400px) {
     .container {
@@ -967,7 +989,6 @@ footer {
     }
 }
 
-
 @media (max-width: 360px) {
     .nav-links a {
         font-size: 0.8rem;
@@ -982,7 +1003,6 @@ footer {
         max-width: 120px;
     }
 }
-
 
 .donations-section {
     padding: 120px 0 4rem;
@@ -1041,7 +1061,6 @@ footer {
     justify-content: center;
 }
 
-
 @media (max-width: 768px) {
     .policy-container {
         gap: 1rem;
@@ -1082,5 +1101,3 @@ footer {
     transform: translateY(0);
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
 }
-
-
